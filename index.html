@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>京东果蔬商城</title>
+    <style>
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 600px; /* 设置图片的高度 */
+            overflow: hidden;
+        }
+
+        .carousel img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .carousel img.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrapin head_t1"> <img src="images/logo.JPG">
+            <div class="member"> 会员登录 会员注册 </div>
+            <div class="clear"></div>
+        </div>
+        <nav>
+            <ul class="wrapin">
+                <li>首页</li>
+                <li>新品抢先</li>
+                <li>年货节专场</li>
+                <div class="clear"></div>
+            </ul>
+        </nav>
+    </header>
+    <div class="content wrapin">
+
+        <div class="left">
+            <div class="bar">
+                <h3>热销水果</h3>
+            </div>
+            <div class="">
+                <ul class="lists">
+                    <a href="details.html">
+                        <li><img src="images/a5.jpg">
+                            <p>进口直达大青芒</p >
+                            <h4>￥12.70</h4>
+                        </li>
+                    </a > <a href="details.html">
+                        <li><img src="images/a10.jpg">
+                            <p>新西兰莱尼尔车厘子</p >
+                            <h4>￥99.00</h4>
+                        </li>
+                    </a > <a href="details.html">
+                        <li><img src="images/a7.jpg">
+                            <p>云南新鲜红葡萄</p >
+                            <h4>￥37.00</h4>
+                        </li>
+                    </a > <a href="details.html">
+                        <li><img src="images/a2.jpg">
+                            <p>新疆XXX小香梨</p >
+                            <h4>￥26.00</h4>
+                        </li>
+                    </a >
+                </ul>
+   </div>
+        </div>
+        <div class="details_con">
+
+            <div class="top">
+                <h3>红富士苹果</h3>
+                <div class="pic"><img src="images/a1.jpg"></div>
+                <div class="word">
+                    <p style="font-weight: 600;">甜醉了 烟台苹果栖霞红富士新鲜水果生鲜山东特产脆甜整箱平果礼盒礼品 5斤 一级大果85mm</p >
+                    <p>脆甜多汁，产地直发带箱10斤的净重在8.5-9斤左右，产地直发！</p >
+                    <div class="ta">
+                        <p>本店价：<span>￥30.90</span></p >
+                        <p>市场价：<em>￥65.55</em></p >
+                    </div>
+                    <p>商品货号 ECS000910</p >
+                    立即购买
+                    加入购物车
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <h3 class="tit"><span>详情</span></h3>
+            <div class="details_img">
+				<img src="images/details2.jpg" width="100%">
+                <div class="carousel">
+                    <img src="images/details3.jpg" width="100%">
+                    <img src="images/apple1.jpg" width="100%">
+                    <img src="images/apple2.jpg" width="100%">
+					<img src="images/apple3.jpg" width="100%">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="clear"></div>
+
+    <footer>
+        <img src="images/footer.jpg" width="1000px">
+        <p style="font-family: kaiti; font-weight: bold;">京东果蔬商城</p >
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const carousel = document.querySelector('.carousel');
+            const images = carousel.querySelectorAll('img');
+            let currentIndex = 0;
+
+            function showNextImage() {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }
+
+            setInterval(showNextImage, 3000); // 每隔3秒切换一次
+        });
+    </script>
+
+</body>
+
+</html>
